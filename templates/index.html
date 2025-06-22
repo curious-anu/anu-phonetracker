@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anu's Phone Tracer 💖</title>
+    <style>
+        body {
+            background: lavenderblush;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            width: 300px;
+            margin: 0 auto;
+            box-shadow: 0px 0px 10px #aaa;
+        }
+    </style>
+</head>
+<body>
+    <h1>📱 Anu's Phone Number Tracer</h1>
+    <form method="POST">
+        <input name="number" placeholder="+91..." required>
+        <br>
+        <button type="submit">Trace</button>
+    </form>
+
+    {% if result %}
+    <div class="box">
+        <h3>📊 Result:</h3>
+        {% for key, value in result.items() %}
+            <p><strong>{{ key.capitalize() }}:</strong> {{ value }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+</body>
+</html>
